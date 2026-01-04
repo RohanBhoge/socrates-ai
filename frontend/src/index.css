@@ -1,0 +1,22 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --bg-color: #f8fafc;
+  --chat-bg: #ffffff;
+  --user-msg-bg: #eff6ff;
+  --ai-msg-bg: #f8fafc;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
