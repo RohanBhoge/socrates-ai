@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
 from typing import List
+import os
 
 class Settings(BaseSettings):
     # API Configuration
@@ -7,11 +8,9 @@ class Settings(BaseSettings):
     API_PORT: int = 8000
     
     # Gemini API
-    GEMINI_API_KEY: str = "AIzaSyDiYiVW2CLVwLt8OClkjkxJJc5WOAWo6vw" # Optional to allow startup without key
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY") # Optional to allow startup without key
+    print("GEMINI_API_KEY: ", GEMINI_API_KEY)
     GEMINI_MODEL: str = "gemini-2.5-flash"
-    
-    # CORS
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000"]
     
     # File Upload
     MAX_FILE_SIZE: int = 10 * 1024 * 1024  # 10MB

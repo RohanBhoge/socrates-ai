@@ -77,7 +77,7 @@ export const ChatInterface = () => {
                 {fileError && <div className="error-banner">{fileError}</div>}
 
                 <form className="input-form" onSubmit={handleSend}>
-                    <FileUpload onDrop={onDrop} files={files} onRemove={removeFile} />
+                    {/* <FileUpload onDrop={onDrop} files={files} onRemove={removeFile} /> */}
 
                     <div className="input-controls">
                         <textarea

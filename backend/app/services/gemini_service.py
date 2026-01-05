@@ -7,14 +7,15 @@ from app.config import settings
 class GeminiService:
     def __init__(self):
         if settings.GEMINI_API_KEY:
+            print("GEMINI_API_KEY: ", settings.GEMINI_API_KEY)  
             genai.configure(api_key=settings.GEMINI_API_KEY)
             self.model = genai.GenerativeModel(
                 model_name=settings.GEMINI_MODEL,
                 system_instruction=SOCRATES_SYSTEM_PROMPT
             )
         else:
-             print("Warning: GEMINI_API_KEY not found in settings.")
-             self.model = None
+            print("Warning: GEMINI_API_KEY not found in settings.")
+            self.model = None
 
         self.memory = MemoryService()
     
