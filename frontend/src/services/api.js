@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/api/chat'; // Vite proxy handles redirection to backend
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://socrates-ai-nine.vercel.app/api/chat'; // Hardcoded to force update
 
 export const api = {
     // Send text + optional files
