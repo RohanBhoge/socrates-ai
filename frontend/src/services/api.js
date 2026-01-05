@@ -1,6 +1,17 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://socrates-ai-nine.vercel.app/api/chat'; // Hardcoded to force update
+const getApiUrl = () => {
+    let url = import.meta.env.VITE_API_URL || 'https://socrates-ai-nine.vercel.app/api/chat';
+    // Remove trailing slash if present
+    url = url.replace(/\/$/, '');
+    // Append /api/chat if not present
+    if (!url.endsWith('/api/chat')) {
+        url = `${url}/api/chat`;
+    }
+    return url;
+};
+
+const API_BASE_URL = getApiUrl();
 
 export const api = {
     // Send text + optional files
