@@ -21,6 +21,10 @@ app.add_middleware(
 app.include_router(chat.router)
 app.include_router(health.router)
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "SocratesAI Backend Running", "version": "1.0.0"}
+
 @app.on_event("startup")
 async def startup_event():
     """Initialize services on startup."""

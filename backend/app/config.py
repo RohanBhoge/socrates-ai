@@ -9,7 +9,6 @@ class Settings(BaseSettings):
     
     # Gemini API
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY") # Optional to allow startup without key
-    print("GEMINI_API_KEY: ", GEMINI_API_KEY)
     GEMINI_MODEL: str = "gemini-2.5-flash"
     
     # File Upload
